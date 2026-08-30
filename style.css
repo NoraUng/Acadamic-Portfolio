@@ -110,12 +110,20 @@ nav .right a span {
   justify-content: right;
 }
 
-.hero-section .headshot img {
+.hero-section .headshot-frame {
   aspect-ratio: 1 / 1;
-  object-fit: cover;
   border-radius: 50%;
+  overflow: hidden;
   width: 450px;
   margin-bottom: 10px;
+}
+
+.hero-section .headshot-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.5);
+  object-position: center;
 }
 
 /* SECTION 3: Skills */
@@ -489,7 +497,7 @@ nav .right a span {
     flex-direction: column-reverse;
   }
 
-  .hero-section .headshot img {
+  .hero-section .headshot-frame {
     width: 300px;
   }
 
