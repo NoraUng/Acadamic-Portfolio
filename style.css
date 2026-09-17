@@ -34,8 +34,10 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 50px;
-  height: 80px;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  padding: 15px 50px;
+  min-height: 80px;
 }
 
 nav .left a {
@@ -85,6 +87,14 @@ nav .right a span {
   margin-bottom: 10px;
 }
 
+.hero-section .text .interests-label {
+  font-size: 20px;
+  font-weight: normal;
+  color: #666;
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+
 .hero-section .text .links {
   margin-top: 25px;
 }
@@ -110,12 +120,20 @@ nav .right a span {
   justify-content: right;
 }
 
-.hero-section .headshot img {
+.hero-section .headshot-frame {
   aspect-ratio: 1 / 1;
-  object-fit: cover;
   border-radius: 50%;
+  overflow: hidden;
   width: 450px;
   margin-bottom: 10px;
+}
+
+.hero-section .headshot-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.5);
+  object-position: center;
 }
 
 /* SECTION 3: Skills */
@@ -489,7 +507,7 @@ nav .right a span {
     flex-direction: column-reverse;
   }
 
-  .hero-section .headshot img {
+  .hero-section .headshot-frame {
     width: 300px;
   }
 
@@ -510,11 +528,17 @@ nav .right a span {
 @media (max-width: 600px) {
   /* NAVBAR */
   nav {
-    padding: 0 20px;
+    justify-content: center;
+    padding: 15px 20px;
+  }
+
+  nav .left {
+    width: 100%;
+    text-align: center;
   }
 
   nav .left a {
-    font-size: 25px;
+    font-size: 20px;
   }
 
   nav .right a {
@@ -622,15 +646,21 @@ nav .right a span {
 @media (max-width: 395px) {
   /* NAVBAR */
   nav {
-    padding: 0 20px;
+    justify-content: center;
+    padding: 15px 20px;
+  }
+
+  nav .left {
+    width: 100%;
+    text-align: center;
   }
 
   nav .left a {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   nav .right a {
-    font-size: 15px;
+    font-size: 20px;
   }
 
   nav .right a:last-child {
